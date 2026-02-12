@@ -1,0 +1,102 @@
+#top-banner {
+  width: 1280px;
+  height: 84px;
+  opacity: 1;
+  background-image: url("image/steel-plant.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background-color: #03495a;
+}
+
+#introduction {
+  width: 1280;
+  height: 607;
+  top: 84px;
+  left: 1px;
+
+  opacity: 0.5;
+
+  background-image: url("image/steel-plant.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background-color: #03495a;
+}
+
+#about-us-section {
+  width: 1280;
+  height: 616;
+  top: 691px;
+  opacity: 1;
+  background: linear-gradient(
+    1.06deg,
+    #03495a 4.29%,
+    #0b7e9b 52.43%,
+    #0d88a7 73.66%,
+    #6ebccf 91.53%
+  );
+
+  /*background-image: url("image/steel-plant.jpg");*/
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background-color: #03495a;
+}
+
+#oval-icon-place {
+  width: 1280;
+  height: 361;
+  top: 1279px;
+
+  background: #03495a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#ship-image-place {
+  width: 1280;
+  height: 688;
+  top: 1640px;
+
+  opacity: 1;
+
+  background: #03495a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#industries-served {
+  width: 1280;
+  height: 564;
+  top: 2328px;
+
+  background: radial-gradient(
+      99.69% 543.88% at 0.31% 97.72%,
+      #03495a 4.55%,
+      #0d88a7 51.83%,
+      #0b657b 93.62%);
+    
+    
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
