@@ -37,7 +37,6 @@ img{
   width:100%;
   height:100%;
   object-fit:cover;
-
   /* so blank src still looks like a box */
   background: rgba(255,255,255,0.10);
 }
@@ -126,7 +125,7 @@ img{
 }
 
 /* =========================
-   HERO
+   HERO (centered text + no side media)
 ========================= */
 .hero{
   position: relative;
@@ -141,15 +140,19 @@ img{
 .hero__overlay{
   position:absolute;
   inset:0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.55), rgba(0,0,0,0.18));
+  background: rgba(0,0,0,0.48);
 }
 .hero__inner{
   position:relative;
   height:100%;
-  display:grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 22px;
+  display:flex;
   align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero__copy{
+  max-width: 720px;
+  margin: 0 auto;
 }
 .hero__copy h1{
   font-size: 34px;
@@ -161,24 +164,13 @@ img{
   color: var(--muted);
   font-size: 12.8px;
   line-height: 1.6;
-  max-width: 520px;
-  margin-bottom: 14px;
+  max-width: 620px;
+  margin: 0 auto 14px;
 }
 
-.hero__media{
-  display:flex;
-  justify-content:flex-end;
-}
-.hero__mediaFrame{
-  width: 100%;
-  max-width: 420px;
-  height: 250px;
-  border-radius: 18px;
-  overflow:hidden;
-  box-shadow: var(--shadow);
-  border: 3px solid rgba(255,255,255,0.20);
-  background: rgba(255,255,255,0.08);
-}
+/* keep these (harmless if not used) */
+.hero__media{ display:none; }
+.hero__mediaFrame{ display:none; }
 
 /* =========================
    ABOUT SECTION
@@ -187,7 +179,6 @@ img{
   background: linear-gradient(180deg, var(--teal-800), var(--teal-900));
   padding: 26px 0 22px;
 }
-.about__inner{ }
 
 .about__grid{
   display:grid;
@@ -258,6 +249,12 @@ img{
   background: rgba(255,255,255,0.18);
   margin-bottom: 4px;
 }
+.stat__icon img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  background: none;
+}
 .stat__num{
   font-weight: 900;
   font-size: 14px;
@@ -270,26 +267,33 @@ img{
 }
 
 /* =========================
-   FEATURE IMAGE (SHIP)
+   FEATURE IMAGE (SHIP) - BIGGER + WITH SIDE MARGINS (UPDATED)
 ========================= */
 .featureImage{
   position: relative;
-  height: 220px;
+  height: 520px;              /* big standard height */
   overflow:hidden;
   background: #0b3f4b;
+
+  /* ✅ margins like banner (container padding look) */
+  margin: 18px 18px 0;
+
+  /* ✅ boxed look */
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.14);
 }
 .featureImage img{
   position:absolute;
   inset:0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
 }
+/* keep cut hidden so the image looks clean */
 .featureImage__cut{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-1px;
-  height: 36px;
-  background: linear-gradient(135deg, transparent 45%, var(--teal-950) 46%);
-  opacity: 0.95;
+  height: 0;
+  opacity: 0;
 }
 
 /* =========================
@@ -383,12 +387,19 @@ img{
 .seeMore:hover{ text-decoration: underline; }
 .seeMore--light{ color: rgba(255,255,255,0.85); }
 
+/* VIRTUAL TOUR BANNER - BIGGER */
 .banner{
-  height: 140px;
-  border-radius: 0;
+  height: 520px;
+  border-radius: 16px;
   overflow:hidden;
   background: #efe2c9;
   border: 1px solid rgba(0,0,0,0.08);
+}
+.banner img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* mosaics */
@@ -397,15 +408,23 @@ img{
   gap: 10px;
 }
 .mosaic__item{
-  height: 110px;
-  border-radius: 10px;
+  border-radius: 14px;
   overflow:hidden;
   border: 1px solid rgba(0,0,0,0.10);
   background: rgba(0,0,0,0.05);
 }
+.mosaic__item img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+}
 
+/* UPDATED mosaic sizes */
 .mosaic--three{ grid-template-columns: repeat(3, 1fr); }
 .mosaic--four{ grid-template-columns: repeat(4, 1fr); }
+.mosaic--three .mosaic__item{ height: 320px; }
+.mosaic--four  .mosaic__item{ height: 240px; }
 
 /* =========================
    CERTS GRID
@@ -631,13 +650,11 @@ img{
 
   .hero{ height: auto; padding: 18px 0; }
   .hero__inner{
-    grid-template-columns: 1fr;
-    gap: 14px;
+    height: auto;
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .hero__media{ justify-content: flex-start; }
-  .hero__mediaFrame{ max-width: 100%; height: 220px; }
+  .hero__copy{ max-width: 100%; }
 
   .about__grid{ grid-template-columns: 1fr; }
   .aboutCard{ height: auto; }
@@ -650,6 +667,15 @@ img{
 
   .mosaic--four{ grid-template-columns: repeat(2, 1fr); }
   .certGrid{ grid-template-columns: repeat(2, 1fr); }
+
+  .featureImage{
+    height: 340px;
+    margin: 12px 18px 0; /* keep side margins on mobile */
+  }
+
+  .banner{ height: 320px; }
+  .mosaic--three .mosaic__item{ height: 260px; }
+  .mosaic--four  .mosaic__item{ height: 220px; }
 
   .visitGrid{ grid-template-columns: 1fr; }
   .queryGrid{ grid-template-columns: 1fr; }
