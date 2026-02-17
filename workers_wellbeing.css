@@ -1,0 +1,352 @@
+/* =========================
+   RESET + BASE (same system)
+========================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+  --teal-950:#053743;
+  --teal-920:#054150;
+  --teal-900:#06424f;
+  --teal-850:#075263;
+  --teal-820:#0a6278;
+  --teal-800:#0b6b82;
+
+  --text:#eaf6f9;
+  --muted:rgba(255,255,255,0.82);
+
+  --accent:#f0b23b;
+  --accent2:#e3a12f;
+
+  --radius:16px;
+  --shadow:0 14px 28px rgba(0,0,0,0.22);
+
+  --container:1120px;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--teal-900);
+  color: var(--text);
+}
+
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  background: rgba(255,255,255,0.10); /* blank src still shows a box */
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  font-weight: 700;
+  font-size: 12.5px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  line-height: 1;
+  border: 0;
+  cursor: pointer;
+}
+.btn--small{ padding: 8px 12px; font-size: 12px; }
+.btn--accent{
+  background: var(--accent);
+  color: #1f2a2e;
+}
+.btn--accent:hover{ background: var(--accent2); }
+
+/* =========================
+   TOP NAV (same as other pages)
+========================= */
+.topbar{
+  height: 56px;
+  background: var(--teal-950);
+  display:flex;
+  align-items:center;
+  position: sticky;
+  top:0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.topbar__inner{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  min-width: 140px;
+}
+.brand__dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+}
+.brand__text{
+  font-weight: 900;
+  letter-spacing: 0.7px;
+  font-size: 13px;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.nav__link{
+  text-decoration:none;
+  color: rgba(255,255,255,0.78);
+  font-size: 11.5px;
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+.nav__link:hover{ background: rgba(255,255,255,0.08); color:#fff; }
+.nav__link.active{
+  color:#fff;
+  background: rgba(255,255,255,0.14);
+}
+
+/* =========================
+   HERO (same pattern)
+========================= */
+.hero{
+  position: relative;
+  height: 210px;
+  overflow:hidden;
+  background: #2a2a2a;
+}
+.hero__bg{ position:absolute; inset:0; }
+.hero__overlay{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.42);
+}
+.hero__inner{
+  position: relative;
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+.hero h1{
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+.hero p{
+  color: rgba(255,255,255,0.90);
+  font-size: 13.5px;
+  line-height: 1.55;
+  max-width: 860px;
+}
+
+/* =========================
+   PAGE BODY BACKGROUND
+========================= */
+.pageBody{
+  background: linear-gradient(180deg, var(--teal-800) 0%, var(--teal-820) 40%, var(--teal-950) 100%);
+  padding: 26px 0 0;
+}
+
+/* =========================
+   INTRO SPLIT (text + image)
+========================= */
+.splitCard{
+  display:grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 18px;
+  align-items: stretch;
+  padding-bottom: 16px;
+}
+
+.splitCard__text{
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 16px;
+  padding: 18px 16px;
+  min-height: 210px;
+}
+.splitCard__text h2{
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.splitCard__text p{
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.86);
+}
+
+.splitCard__media{
+  display:flex;
+  align-items: stretch;
+}
+.mediaFrame{
+  width: 100%;
+  border-radius: 18px;
+  overflow:hidden;
+  border: 2px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.22);
+  min-height: 210px;
+}
+
+/* =========================
+   BENEFITS
+========================= */
+.benefits{
+  padding: 14px 0 18px;
+}
+
+.sectionTitle{
+  font-size: 34px;
+  font-weight: 900;
+  margin: 10px 0 18px;
+}
+.sectionTitle--center{ text-align:center; }
+
+.benefit{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.benefit--reverse .benefit__text{ order: 2; }
+.benefit--reverse .benefit__media{ order: 1; }
+
+.benefit__text{
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 16px;
+  padding: 16px;
+  min-height: 160px;
+}
+
+.benefit__text h3{
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.benefit__text p{
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.86);
+}
+
+.benefitFrame{
+  width: 100%;
+  border-radius: 16px;
+  overflow:hidden;
+  border: 2px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.22);
+  height: 160px; /* keeps consistent height like other grids */
+}
+
+/* =========================
+   FOOTER (same as other pages)
+========================= */
+.footer{
+  margin-top: 18px;
+  padding: 16px 0 12px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  background: var(--teal-950);
+}
+
+.footerInner{
+  display:grid;
+  grid-template-columns: 240px 1fr 140px;
+  gap: 12px;
+  align-items:center;
+}
+
+.footerBrand__top{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footerLinks{
+  display:flex;
+  justify-content:center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footerLinks a{
+  text-decoration:none;
+  font-size: 11px;
+  color: rgba(255,255,255,0.72);
+}
+.footerLinks a:hover{ color:#fff; }
+
+.socialRow{
+  display:flex;
+  gap: 10px;
+}
+
+.socialDot{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.22);
+}
+
+.footerBottom{
+  margin-top: 10px;
+  display:flex;
+  justify-content: flex-end;
+  color: rgba(255,255,255,0.62);
+  font-size: 11px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 980px){
+  .nav{ display:none; }
+
+  .hero{ height: 230px; }
+  .hero h1{ font-size: 34px; }
+
+  .splitCard{
+    grid-template-columns: 1fr;
+  }
+
+  .benefit{
+    grid-template-columns: 1fr;
+  }
+  .benefit--reverse .benefit__text,
+  .benefit--reverse .benefit__media{
+    order: unset;
+  }
+
+  .footerInner{
+    grid-template-columns: 1fr;
+    text-align:center;
+  }
+  .footerLinks{ justify-content:center; }
+  .footerBottom{ justify-content:center; }
+  .socialRow{ justify-content:center; }
+}
