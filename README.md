@@ -16,11 +16,8 @@ A professional corporate website for KR Steel Structure Limited, a pre-engineere
 - CSS3
 - Static image assets
 
-## Quick Start
-```bash
-git clone https://github.com/Maslenia-Mubarrat/KR_STEEL_WEBSITE.git
-cd KR_STEEL_WEBSITE
-# Open index.html in your browser
-```
+## Quick Look
+Link - https://maslenia-mubarrat.github.io/KR_STEEL_WEBSITE/
+
 
 This is a static front-end project and does not require any backend setup.
