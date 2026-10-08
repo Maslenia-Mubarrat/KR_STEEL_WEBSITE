@@ -1,29 +1,26 @@
 # KR Steel Website
 
-A professional corporate website for **KR Steel Structure Limited**, a pre-engineered steel structure manufacturer based in Bangladesh.
+A professional corporate website for KR Steel Structure Limited, a pre-engineered steel structure manufacturer in Bangladesh.
 
 ## Key Features
-
-- **Home Page** - Hero section with company introduction
-- **About Us** - Company background with image collage and statistics
-- **Virtual Tour** - Interactive facility showcase
-- **Certification Grid** - ISO certifications (9001, 14001, 45001)
-- **Workers Wellbeing** - Workforce culture and safety focus
-- **Contact Section** - Enquiry form and company details
-- **Responsive Design** - Works on desktop and mobile
+- Home page with hero section and company introduction
+- About Us section with company background and stats
+- Virtual Tour section for facility presentation
+- Certification Grid showcasing quality standards
+- Workers Wellbeing section highlighting workforce care
+- Contact and enquiry section for client communication
+- Responsive layout for desktop and mobile
 
 ## Technologies Used
-
-- **HTML5** - Semantic markup and structure
-- **CSS3** - Modern styling, layouts, and responsive design
-- Static assets (images and branding)
+- HTML5
+- CSS3
+- Static image assets
 
 ## Quick Start
-
 ```bash
 git clone https://github.com/Maslenia-Mubarrat/KR_STEEL_WEBSITE.git
 cd KR_STEEL_WEBSITE
 # Open index.html in your browser
 ```
 
-No backend required—it's a pure static front-end website.
+This is a static front-end project and does not require any backend setup.
